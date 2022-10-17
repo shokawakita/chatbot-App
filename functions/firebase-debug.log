@@ -1,0 +1,466 @@
+[debug] [2022-08-29T15:56:10.237Z] ----------------------------------------------------------------------
+[debug] [2022-08-29T15:56:10.238Z] Command:       /Users/kawakitasho/.nodebrew/node/v18.8.0/bin/node /Users/kawakitasho/.nodebrew/current/bin/firebase deploy
+[debug] [2022-08-29T15:56:10.238Z] CLI Version:   11.8.0
+[debug] [2022-08-29T15:56:10.238Z] Platform:      darwin
+[debug] [2022-08-29T15:56:10.238Z] Node Version:  v18.8.0
+[debug] [2022-08-29T15:56:10.239Z] Time:          Tue Aug 30 2022 00:56:10 GMT+0900 (日本標準時)
+[debug] [2022-08-29T15:56:10.239Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-08-29T15:56:10.264Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-08-29T15:56:10.264Z] > authorizing via signed-in user (shokawakita0630@gmail.com)
+[debug] [2022-08-29T15:56:10.264Z] [iam] checking project chatbot-demo-e5d8a for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-08-29T15:56:10.265Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatbot-demo-e5d8a:testIamPermissions [none]
+[debug] [2022-08-29T15:56:10.265Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatbot-demo-e5d8a:testIamPermissions x-goog-quota-user=projects/chatbot-demo-e5d8a
+[debug] [2022-08-29T15:56:10.265Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatbot-demo-e5d8a:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-08-29T15:56:11.146Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatbot-demo-e5d8a:testIamPermissions 200
+[debug] [2022-08-29T15:56:11.147Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatbot-demo-e5d8a:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-08-29T15:56:11.148Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/chatbot-demo-e5d8a/serviceAccounts/chatbot-demo-e5d8a@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2022-08-29T15:56:11.148Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/chatbot-demo-e5d8a/serviceAccounts/chatbot-demo-e5d8a@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2022-08-29T15:56:12.189Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/chatbot-demo-e5d8a/serviceAccounts/chatbot-demo-e5d8a@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2022-08-29T15:56:12.189Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/chatbot-demo-e5d8a/serviceAccounts/chatbot-demo-e5d8a@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2022-08-29T15:56:12.191Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chatbot-demo-e5d8a [none]
+[debug] [2022-08-29T15:56:12.845Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chatbot-demo-e5d8a 200
+[debug] [2022-08-29T15:56:12.845Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chatbot-demo-e5d8a {"projectId":"chatbot-demo-e5d8a","projectNumber":"551695444880","displayName":"chatbot-demo","name":"projects/chatbot-demo-e5d8a","resources":{"hostingSite":"chatbot-demo-e5d8a","storageBucket":"chatbot-demo-e5d8a.appspot.com","locationId":"asia-northeast1"},"state":"ACTIVE","etag":"1_39b8d592-2906-4999-afdc-5bd7276f3df0"}
+[info] 
+[info] === Deploying to 'chatbot-demo-e5d8a'...
+[info] 
+[info] i  deploying firestore, functions, hosting 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] Running command: npm --prefix "$RESOURCE_DIR" run build
+[info] ✔  functions: Finished running predeploy script. 
+[info] i  firestore: reading indexes from firestore.indexes.json... 
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2022-08-29T15:56:16.161Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/chatbot-demo-e5d8a:test [none]
+[debug] [2022-08-29T15:56:16.162Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/chatbot-demo-e5d8a:test [omitted]
+[debug] [2022-08-29T15:56:17.470Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/chatbot-demo-e5d8a:test 200
+[debug] [2022-08-29T15:56:17.470Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/chatbot-demo-e5d8a:test {}
+[info] ✔  cloud.firestore: rules file firestore.rules compiled successfully 
+[debug] [2022-08-29T15:56:17.473Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chatbot-demo-e5d8a [none]
+[debug] [2022-08-29T15:56:18.084Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chatbot-demo-e5d8a 200
+[debug] [2022-08-29T15:56:18.085Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chatbot-demo-e5d8a {"projectId":"chatbot-demo-e5d8a","projectNumber":"551695444880","displayName":"chatbot-demo","name":"projects/chatbot-demo-e5d8a","resources":{"hostingSite":"chatbot-demo-e5d8a","storageBucket":"chatbot-demo-e5d8a.appspot.com","locationId":"asia-northeast1"},"state":"ACTIVE","etag":"1_39b8d592-2906-4999-afdc-5bd7276f3df0"}
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2022-08-29T15:56:18.088Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatbot-demo-e5d8a/services/cloudfunctions.googleapis.com [none]
+[debug] [2022-08-29T15:56:18.090Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatbot-demo-e5d8a/services/runtimeconfig.googleapis.com [none]
+[debug] [2022-08-29T15:56:18.092Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatbot-demo-e5d8a/services/cloudbuild.googleapis.com [none]
+[debug] [2022-08-29T15:56:18.093Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatbot-demo-e5d8a/services/artifactregistry.googleapis.com [none]
+[debug] [2022-08-29T15:56:19.327Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatbot-demo-e5d8a/services/cloudbuild.googleapis.com 200
+[debug] [2022-08-29T15:56:19.328Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatbot-demo-e5d8a/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2022-08-29T15:56:19.332Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatbot-demo-e5d8a/services/runtimeconfig.googleapis.com 200
+[debug] [2022-08-29T15:56:19.332Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatbot-demo-e5d8a/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2022-08-29T15:56:19.333Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatbot-demo-e5d8a/services/artifactregistry.googleapis.com 200
+[debug] [2022-08-29T15:56:19.333Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatbot-demo-e5d8a/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2022-08-29T15:56:19.334Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatbot-demo-e5d8a/services/cloudfunctions.googleapis.com 200
+[debug] [2022-08-29T15:56:19.334Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatbot-demo-e5d8a/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2022-08-29T15:56:19.335Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chatbot-demo-e5d8a/adminSdkConfig [none]
+[debug] [2022-08-29T15:56:19.844Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chatbot-demo-e5d8a/adminSdkConfig 200
+[debug] [2022-08-29T15:56:19.845Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chatbot-demo-e5d8a/adminSdkConfig {"projectId":"chatbot-demo-e5d8a","storageBucket":"chatbot-demo-e5d8a.appspot.com","locationId":"asia-northeast1"}
+[debug] [2022-08-29T15:56:19.846Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/chatbot-demo-e5d8a/configs [none]
+[debug] [2022-08-29T15:56:21.378Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/chatbot-demo-e5d8a/configs 200
+[debug] [2022-08-29T15:56:21.379Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/chatbot-demo-e5d8a/configs {}
+[info] i  functions: preparing codebase default for deployment 
+[debug] [2022-08-29T15:56:21.381Z] Validating nodejs source
+[debug] [2022-08-29T15:56:22.149Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "tslint --project tsconfig.json",
+    "build": "tsc",
+    "serve": "npm run build && firebase serve --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^8.6.0",
+    "firebase-functions": "^3.3.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.1.6",
+    "tslint": "^5.12.0",
+    "typescript": "^4.2.2"
+  },
+  "private": true,
+  "version": "1.0.0",
+  "directories": {
+    "lib": "lib"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
+[debug] [2022-08-29T15:56:22.150Z] Building nodejs source
+[debug] [2022-08-29T15:56:22.151Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-29T15:56:22.437Z] Serving at port 9005
+
+[debug] [2022-08-29T15:56:22.561Z] Got response from /__/functions.yaml {"endpoints":{"addDataset":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"addDataset"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-29T15:56:22.564Z] shutdown requested via /__/quitquitquit
+
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged /Users/kawakitasho/Desktop/トラゼミ/chatbot-demo/functions (76.56 KB) for uploading 
+[debug] [2022-08-29T15:56:22.592Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/chatbot-demo-e5d8a/locations/-/functions [none]
+[debug] [2022-08-29T15:56:24.098Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/chatbot-demo-e5d8a/locations/-/functions 200
+[debug] [2022-08-29T15:56:24.098Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/chatbot-demo-e5d8a/locations/-/functions {}
+[debug] [2022-08-29T15:56:24.099Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2alpha/projects/chatbot-demo-e5d8a/locations/-/functions [none]
+[debug] [2022-08-29T15:56:25.818Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2alpha/projects/chatbot-demo-e5d8a/locations/-/functions 200
+[debug] [2022-08-29T15:56:25.818Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2alpha/projects/chatbot-demo-e5d8a/locations/-/functions {}
+[debug] [2022-08-29T15:56:25.830Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chatbot-demo-e5d8a [none]
+[debug] [2022-08-29T15:56:26.503Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chatbot-demo-e5d8a 200
+[debug] [2022-08-29T15:56:26.504Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chatbot-demo-e5d8a {"projectId":"chatbot-demo-e5d8a","projectNumber":"551695444880","displayName":"chatbot-demo","name":"projects/chatbot-demo-e5d8a","resources":{"hostingSite":"chatbot-demo-e5d8a","storageBucket":"chatbot-demo-e5d8a.appspot.com","locationId":"asia-northeast1"},"state":"ACTIVE","etag":"1_39b8d592-2906-4999-afdc-5bd7276f3df0"}
+[debug] [2022-08-29T15:56:26.508Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/551695444880/sites/chatbot-demo-e5d8a/versions [none]
+[debug] [2022-08-29T15:56:26.508Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/551695444880/sites/chatbot-demo-e5d8a/versions {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-08-29T15:56:27.521Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/551695444880/sites/chatbot-demo-e5d8a/versions 200
+[debug] [2022-08-29T15:56:27.522Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/551695444880/sites/chatbot-demo-e5d8a/versions {"name":"projects/551695444880/sites/chatbot-demo-e5d8a/versions/ae03de02ba5cce73","status":"CREATED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-08-29T15:56:27.523Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/chatbot-demo-e5d8a/releases pageSize=10&pageToken=
+[debug] [2022-08-29T15:56:27.525Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/chatbot-demo-e5d8a/databases/(default)/collectionGroups/-/indexes [none]
+[debug] [2022-08-29T15:56:27.953Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/chatbot-demo-e5d8a/databases/(default)/collectionGroups/-/indexes 200
+[debug] [2022-08-29T15:56:27.953Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/chatbot-demo-e5d8a/databases/(default)/collectionGroups/-/indexes {}
+[debug] [2022-08-29T15:56:27.954Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/chatbot-demo-e5d8a/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false [none]
+[debug] [2022-08-29T15:56:28.182Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/chatbot-demo-e5d8a/releases 200
+[debug] [2022-08-29T15:56:28.182Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/chatbot-demo-e5d8a/releases {"releases":[{"name":"projects/chatbot-demo-e5d8a/releases/cloud.firestore","rulesetName":"projects/chatbot-demo-e5d8a/rulesets/b4a37081-55b7-49bd-8c88-a03a8069f729","createTime":"2022-08-29T03:08:26.297166Z","updateTime":"2022-08-29T14:37:08.248253Z"}]}
+[debug] [2022-08-29T15:56:28.182Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/chatbot-demo-e5d8a/rulesets/b4a37081-55b7-49bd-8c88-a03a8069f729 [none]
+[debug] [2022-08-29T15:56:28.255Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/chatbot-demo-e5d8a/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false 200
+[debug] [2022-08-29T15:56:28.255Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/chatbot-demo-e5d8a/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false {"fields":[{"name":"projects/chatbot-demo-e5d8a/databases/(default)/collectionGroups/__default__/fields/*","indexConfig":{"indexes":[{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"ASCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"DESCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","arrayConfig":"CONTAINS"}],"state":"READY"}]}}]}
+[info] ✔  firestore: deployed indexes in firestore.indexes.json successfully 
+[debug] [2022-08-29T15:56:29.620Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/chatbot-demo-e5d8a/rulesets/b4a37081-55b7-49bd-8c88-a03a8069f729 200
+[debug] [2022-08-29T15:56:29.621Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/chatbot-demo-e5d8a/rulesets/b4a37081-55b7-49bd-8c88-a03a8069f729 [omitted]
+[info] i  firestore: latest version of firestore.rules already up to date, skipping upload... 
+[debug] [2022-08-29T15:56:29.623Z] [functions] found 1 new HTTP functions, testing setIamPolicy permission...
+[debug] [2022-08-29T15:56:29.624Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatbot-demo-e5d8a:testIamPermissions [none]
+[debug] [2022-08-29T15:56:29.624Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatbot-demo-e5d8a:testIamPermissions x-goog-quota-user=projects/chatbot-demo-e5d8a
+[debug] [2022-08-29T15:56:29.624Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatbot-demo-e5d8a:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2022-08-29T15:56:30.024Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatbot-demo-e5d8a:testIamPermissions 200
+[debug] [2022-08-29T15:56:30.024Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatbot-demo-e5d8a:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2022-08-29T15:56:30.025Z] [functions] found setIamPolicy permission, proceeding with deploy
+[debug] [2022-08-29T15:56:30.026Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/chatbot-demo-e5d8a/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2022-08-29T15:56:30.026Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/chatbot-demo-e5d8a/locations/us-central1/functions:generateUploadUrl {}
+[debug] [2022-08-29T15:56:39.740Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/chatbot-demo-e5d8a/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2022-08-29T15:56:39.741Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/chatbot-demo-e5d8a/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/uploads-894679295388.us-central1.cloudfunctions.appspot.com/7b437368-fcbf-48d5-87f8-2aa0e3b78c00.zip?GoogleAccessId=service-551695444880@gcf-admin-robot.iam.gserviceaccount.com&Expires=1661790399&Signature=aP3JoiPCEVDy8Q8Os3Os%2FSBWXlSCRc7IL16aai1%2FilsMW8RyC5qz2W0wYfySBXSHGD6QIyiltWOfjdBIsYbv9gVcS1224dWURyXWva8bF2QO%2BeFczi6zMhmQNyCWZWzu91FzeS9uwrWKvlFaI4tmwpqsNU%2FPGuHqn0b%2FBJc6nQIG9ObtteTJZtBbmFShHi2PdCp%2BSRk3IB1uWMnDn%2Bgb4%2B9o3PHSLi%2FhNNFgz8CTpidmMIj%2FQ4BqgdrAHLv%2B3LrP%2B%2FGfo5F%2B5TjSbvQf%2FM3t0n8%2BF5tp4dXkDNqD0cO8VTBCkFSknRD0LozWnPgEZBHp8vZcY9E%2FsF3Fvjou3XH0Sw%3D%3D"}
+[debug] [2022-08-29T15:56:39.742Z] >>> [apiv2][query] PUT https://storage.googleapis.com/uploads-894679295388.us-central1.cloudfunctions.appspot.com/7b437368-fcbf-48d5-87f8-2aa0e3b78c00.zip GoogleAccessId=service-551695444880%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1661790399&Signature=aP3JoiPCEVDy8Q8Os3Os%2FSBWXlSCRc7IL16aai1%2FilsMW8RyC5qz2W0wYfySBXSHGD6QIyiltWOfjdBIsYbv9gVcS1224dWURyXWva8bF2QO%2BeFczi6zMhmQNyCWZWzu91FzeS9uwrWKvlFaI4tmwpqsNU%2FPGuHqn0b%2FBJc6nQIG9ObtteTJZtBbmFShHi2PdCp%2BSRk3IB1uWMnDn%2Bgb4%2B9o3PHSLi%2FhNNFgz8CTpidmMIj%2FQ4BqgdrAHLv%2B3LrP%2B%2FGfo5F%2B5TjSbvQf%2FM3t0n8%2BF5tp4dXkDNqD0cO8VTBCkFSknRD0LozWnPgEZBHp8vZcY9E%2FsF3Fvjou3XH0Sw%3D%3D
+[debug] [2022-08-29T15:56:39.742Z] >>> [apiv2][body] PUT https://storage.googleapis.com/uploads-894679295388.us-central1.cloudfunctions.appspot.com/7b437368-fcbf-48d5-87f8-2aa0e3b78c00.zip [stream]
+[debug] [2022-08-29T15:56:40.720Z] <<< [apiv2][status] PUT https://storage.googleapis.com/uploads-894679295388.us-central1.cloudfunctions.appspot.com/7b437368-fcbf-48d5-87f8-2aa0e3b78c00.zip 200
+[debug] [2022-08-29T15:56:40.720Z] <<< [apiv2][body] PUT https://storage.googleapis.com/uploads-894679295388.us-central1.cloudfunctions.appspot.com/7b437368-fcbf-48d5-87f8-2aa0e3b78c00.zip [omitted]
+[info] ✔  functions: functions folder uploaded successfully 
+[info] i  hosting[chatbot-demo-e5d8a]: beginning deploy... 
+[info] i  hosting[chatbot-demo-e5d8a]: found 15 files in build 
+[debug] [2022-08-29T15:56:40.733Z] [hosting] uploading with 200 concurrency
+[debug] [2022-08-29T15:56:40.739Z] [hosting] hash cache [YnVpbGQ] stored for 15 files
+[debug] [2022-08-29T15:56:40.740Z] [hosting][hash queue][FINAL] {"max":1,"min":0,"avg":0,"active":0,"complete":15,"success":15,"errored":0,"retried":0,"total":15,"elapsed":3}
+[debug] [2022-08-29T15:56:40.740Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/551695444880/sites/chatbot-demo-e5d8a/versions/ae03de02ba5cce73:populateFiles [none]
+[debug] [2022-08-29T15:56:40.740Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/551695444880/sites/chatbot-demo-e5d8a/versions/ae03de02ba5cce73:populateFiles {"files":{"/asset-manifest.json":"7d2f87942e34b47074579b65a98fac4743911914035ef99a16871d5a4918097a","/favicon.ico":"b72f7455f00e4e58792d2bca892abb068e2213838c0316d6b7a0d6d16acd1955","/index.html":"f69e6939bb2264db6b429de5b258536950034602857e4648a5482826473c7c9d","/logo192.png":"caff018b7f1e8fd481eb1c50d75b0ef236bcd5078b1d15c8bb348453fee30293","/logo512.png":"191fc21360b4ccfb1cda11a1efb97f489ed22672ca83f4064316802bbfdd750e","/manifest.json":"341d52628782f8ac9290bbfc43298afccb47b7cbfcee146ae30cf0f46bc30900","/robots.txt":"391d14b3c2f8c9143a27a28c7399585142228d4d1bdbe2c87ac946de411fa9a2","/static/css/main.a091dce2.css":"62d2c21e5cb3df3608106776d9ea1928d4496ba84e9113df20a24e8e34f287fb","/static/css/main.a091dce2.css.map":"d9a824efe38ba7b30e60df4c0b132aba8d28221fd38921a732ac6718daf87770","/static/js/787.5f1195d9.chunk.js":"98647f339801b571d05324bb0ae14f7898149f350ee035a483c146d1374b584a","/static/js/787.5f1195d9.chunk.js.map":"e9e8cdf66061c0d48d75650fca7a4003f828f86e9b34ca36c7ba9d5329542bff","/static/js/main.e7b5c069.js":"eb42c7360b202f5369e95bde6d1ae87e75d41136d1c82ebdec66f63142085a5b","/static/js/main.e7b5c069.js.LICENSE.txt":"cf01c7fb4cbec16265bab4157398efb1b9b46a4811ac48c0bc7ab590b6a16473","/static/js/main.e7b5c069.js.map":"d5c1ad1a4f5029b1d2308314a45acdc534f4c848ae847849a2168338cf5b33fb","/static/media/NoProfile.5df52e6628f3d3e9269f.png":"3d8b83d43721212b3d7de070eb4ba0c5a58faaf79de5a67f2e8458185e342df5"}}
+[debug] [2022-08-29T15:56:41.548Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/551695444880/sites/chatbot-demo-e5d8a/versions/ae03de02ba5cce73:populateFiles 200
+[debug] [2022-08-29T15:56:41.548Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/551695444880/sites/chatbot-demo-e5d8a/versions/ae03de02ba5cce73:populateFiles {"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/chatbot-demo-e5d8a/versions/ae03de02ba5cce73/files"}
+[debug] [2022-08-29T15:56:41.549Z] [hosting][populate queue][FINAL] {"max":811,"min":811,"avg":811,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":811}
+[debug] [2022-08-29T15:56:41.549Z] [hosting] uploads queued: 0
+[debug] [2022-08-29T15:56:41.549Z] [hosting][upload queue][FINAL] {"max":0,"min":9999999999,"avg":0,"active":0,"complete":0,"success":0,"errored":0,"retried":0,"total":0,"elapsed":1661788601549}
+[info] ✔  hosting[chatbot-demo-e5d8a]: file upload complete 
+[debug] [2022-08-29T15:56:41.550Z] [hosting] deploy completed after 827ms
+[debug] [2022-08-29T15:56:41.554Z] [rules] releasing cloud.firestore with ruleset projects/chatbot-demo-e5d8a/rulesets/b4a37081-55b7-49bd-8c88-a03a8069f729
+[debug] [2022-08-29T15:56:41.555Z] >>> [apiv2][query] PATCH https://firebaserules.googleapis.com/v1/projects/chatbot-demo-e5d8a/releases/cloud.firestore [none]
+[debug] [2022-08-29T15:56:41.555Z] >>> [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/chatbot-demo-e5d8a/releases/cloud.firestore {"release":{"name":"projects/chatbot-demo-e5d8a/releases/cloud.firestore","rulesetName":"projects/chatbot-demo-e5d8a/rulesets/b4a37081-55b7-49bd-8c88-a03a8069f729"}}
+[debug] [2022-08-29T15:56:42.879Z] <<< [apiv2][status] PATCH https://firebaserules.googleapis.com/v1/projects/chatbot-demo-e5d8a/releases/cloud.firestore 200
+[debug] [2022-08-29T15:56:42.879Z] <<< [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/chatbot-demo-e5d8a/releases/cloud.firestore {"name":"projects/chatbot-demo-e5d8a/releases/cloud.firestore","rulesetName":"projects/chatbot-demo-e5d8a/rulesets/b4a37081-55b7-49bd-8c88-a03a8069f729","createTime":"2022-08-29T03:08:26.297166Z","updateTime":"2022-08-29T15:56:42.957304Z"}
+[debug] [2022-08-29T15:56:42.879Z] [rules] updated release projects/chatbot-demo-e5d8a/releases/cloud.firestore
+[info] ✔  firestore: released rules firestore.rules to cloud.firestore 
+[info] i  functions: creating Node.js 16 function addDataset(us-central1)... 
+[debug] [2022-08-29T15:56:42.884Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/chatbot-demo-e5d8a/locations/us-central1/functions [none]
+[debug] [2022-08-29T15:56:42.884Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/chatbot-demo-e5d8a/locations/us-central1/functions {"name":"projects/chatbot-demo-e5d8a/locations/us-central1/functions/addDataset","sourceUploadUrl":"https://storage.googleapis.com/uploads-894679295388.us-central1.cloudfunctions.appspot.com/7b437368-fcbf-48d5-87f8-2aa0e3b78c00.zip?GoogleAccessId=service-551695444880@gcf-admin-robot.iam.gserviceaccount.com&Expires=1661790399&Signature=aP3JoiPCEVDy8Q8Os3Os%2FSBWXlSCRc7IL16aai1%2FilsMW8RyC5qz2W0wYfySBXSHGD6QIyiltWOfjdBIsYbv9gVcS1224dWURyXWva8bF2QO%2BeFczi6zMhmQNyCWZWzu91FzeS9uwrWKvlFaI4tmwpqsNU%2FPGuHqn0b%2FBJc6nQIG9ObtteTJZtBbmFShHi2PdCp%2BSRk3IB1uWMnDn%2Bgb4%2B9o3PHSLi%2FhNNFgz8CTpidmMIj%2FQ4BqgdrAHLv%2B3LrP%2B%2FGfo5F%2B5TjSbvQf%2FM3t0n8%2BF5tp4dXkDNqD0cO8VTBCkFSknRD0LozWnPgEZBHp8vZcY9E%2FsF3Fvjou3XH0Sw%3D%3D","entryPoint":"addDataset","runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY","labels":{"deployment-tool":"cli-firebase"},"httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"chatbot-demo-e5d8a\",\"storageBucket\":\"chatbot-demo-e5d8a.appspot.com\",\"locationId\":\"asia-northeast1\"}","GCLOUD_PROJECT":"chatbot-demo-e5d8a"}}
+[debug] [2022-08-29T15:56:44.299Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/chatbot-demo-e5d8a/locations/us-central1/functions 200
+[debug] [2022-08-29T15:56:44.299Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/chatbot-demo-e5d8a/locations/us-central1/functions {"name":"operations/Y2hhdGJvdC1kZW1vLWU1ZDhhL3VzLWNlbnRyYWwxL2FkZERhdGFzZXQvVi1uLV91S3NYaXM","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/chatbot-demo-e5d8a/locations/us-central1/functions/addDataset","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/chatbot-demo-e5d8a/locations/us-central1/functions/addDataset","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"addDataset","labels":{"deployment-tool":"cli-firebase"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-894679295388.us-central1.cloudfunctions.appspot.com/7b437368-fcbf-48d5-87f8-2aa0e3b78c00.zip?GoogleAccessId=service-551695444880@gcf-admin-robot.iam.gserviceaccount.com&Expires=1661790399&Signature=aP3JoiPCEVDy8Q8Os3Os%2FSBWXlSCRc7IL16aai1%2FilsMW8RyC5qz2W0wYfySBXSHGD6QIyiltWOfjdBIsYbv9gVcS1224dWURyXWva8bF2QO%2BeFczi6zMhmQNyCWZWzu91FzeS9uwrWKvlFaI4tmwpqsNU%2FPGuHqn0b%2FBJc6nQIG9ObtteTJZtBbmFShHi2PdCp%2BSRk3IB1uWMnDn%2Bgb4%2B9o3PHSLi%2FhNNFgz8CTpidmMIj%2FQ4BqgdrAHLv%2B3LrP%2B%2FGfo5F%2B5TjSbvQf%2FM3t0n8%2BF5tp4dXkDNqD0cO8VTBCkFSknRD0LozWnPgEZBHp8vZcY9E%2FsF3Fvjou3XH0Sw%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"chatbot-demo-e5d8a\",\"storageBucket\":\"chatbot-demo-e5d8a.appspot.com\",\"locationId\":\"asia-northeast1\"}","GCLOUD_PROJECT":"chatbot-demo-e5d8a"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2022-08-29T15:56:44Z"}}
+[debug] [2022-08-29T15:56:44.301Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/Y2hhdGJvdC1kZW1vLWU1ZDhhL3VzLWNlbnRyYWwxL2FkZERhdGFzZXQvVi1uLV91S3NYaXM [none]
+[debug] [2022-08-29T15:56:45.350Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/Y2hhdGJvdC1kZW1vLWU1ZDhhL3VzLWNlbnRyYWwxL2FkZERhdGFzZXQvVi1uLV91S3NYaXM 200
+[debug] [2022-08-29T15:56:45.350Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/Y2hhdGJvdC1kZW1vLWU1ZDhhL3VzLWNlbnRyYWwxL2FkZERhdGFzZXQvVi1uLV91S3NYaXM {"name":"operations/Y2hhdGJvdC1kZW1vLWU1ZDhhL3VzLWNlbnRyYWwxL2FkZERhdGFzZXQvVi1uLV91S3NYaXM","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/chatbot-demo-e5d8a/locations/us-central1/functions/addDataset","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/chatbot-demo-e5d8a/locations/us-central1/functions/addDataset","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"addDataset","labels":{"deployment-tool":"cli-firebase"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-894679295388.us-central1.cloudfunctions.appspot.com/7b437368-fcbf-48d5-87f8-2aa0e3b78c00.zip?GoogleAccessId=service-551695444880@gcf-admin-robot.iam.gserviceaccount.com&Expires=1661790399&Signature=aP3JoiPCEVDy8Q8Os3Os%2FSBWXlSCRc7IL16aai1%2FilsMW8RyC5qz2W0wYfySBXSHGD6QIyiltWOfjdBIsYbv9gVcS1224dWURyXWva8bF2QO%2BeFczi6zMhmQNyCWZWzu91FzeS9uwrWKvlFaI4tmwpqsNU%2FPGuHqn0b%2FBJc6nQIG9ObtteTJZtBbmFShHi2PdCp%2BSRk3IB1uWMnDn%2Bgb4%2B9o3PHSLi%2FhNNFgz8CTpidmMIj%2FQ4BqgdrAHLv%2B3LrP%2B%2FGfo5F%2B5TjSbvQf%2FM3t0n8%2BF5tp4dXkDNqD0cO8VTBCkFSknRD0LozWnPgEZBHp8vZcY9E%2FsF3Fvjou3XH0Sw%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"chatbot-demo-e5d8a\",\"storageBucket\":\"chatbot-demo-e5d8a.appspot.com\",\"locationId\":\"asia-northeast1\"}","GCLOUD_PROJECT":"chatbot-demo-e5d8a"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2022-08-29T15:56:44Z"}}
+[debug] [2022-08-29T15:56:45.853Z] [create-default-us-central1-addDataset] Retrying task index 0
+[debug] [2022-08-29T15:56:45.854Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/Y2hhdGJvdC1kZW1vLWU1ZDhhL3VzLWNlbnRyYWwxL2FkZERhdGFzZXQvVi1uLV91S3NYaXM [none]
+[debug] [2022-08-29T15:56:46.561Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/Y2hhdGJvdC1kZW1vLWU1ZDhhL3VzLWNlbnRyYWwxL2FkZERhdGFzZXQvVi1uLV91S3NYaXM 200
+[debug] [2022-08-29T15:56:46.561Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/Y2hhdGJvdC1kZW1vLWU1ZDhhL3VzLWNlbnRyYWwxL2FkZERhdGFzZXQvVi1uLV91S3NYaXM {"name":"operations/Y2hhdGJvdC1kZW1vLWU1ZDhhL3VzLWNlbnRyYWwxL2FkZERhdGFzZXQvVi1uLV91S3NYaXM","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/chatbot-demo-e5d8a/locations/us-central1/functions/addDataset","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/chatbot-demo-e5d8a/locations/us-central1/functions/addDataset","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"addDataset","labels":{"deployment-tool":"cli-firebase"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-894679295388.us-central1.cloudfunctions.appspot.com/7b437368-fcbf-48d5-87f8-2aa0e3b78c00.zip?GoogleAccessId=service-551695444880@gcf-admin-robot.iam.gserviceaccount.com&Expires=1661790399&Signature=aP3JoiPCEVDy8Q8Os3Os%2FSBWXlSCRc7IL16aai1%2FilsMW8RyC5qz2W0wYfySBXSHGD6QIyiltWOfjdBIsYbv9gVcS1224dWURyXWva8bF2QO%2BeFczi6zMhmQNyCWZWzu91FzeS9uwrWKvlFaI4tmwpqsNU%2FPGuHqn0b%2FBJc6nQIG9ObtteTJZtBbmFShHi2PdCp%2BSRk3IB1uWMnDn%2Bgb4%2B9o3PHSLi%2FhNNFgz8CTpidmMIj%2FQ4BqgdrAHLv%2B3LrP%2B%2FGfo5F%2B5TjSbvQf%2FM3t0n8%2BF5tp4dXkDNqD0cO8VTBCkFSknRD0LozWnPgEZBHp8vZcY9E%2FsF3Fvjou3XH0Sw%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"chatbot-demo-e5d8a\",\"storageBucket\":\"chatbot-demo-e5d8a.appspot.com\",\"locationId\":\"asia-northeast1\"}","GCLOUD_PROJECT":"chatbot-demo-e5d8a"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2022-08-29T15:56:44Z"}}
+[debug] [2022-08-29T15:56:47.563Z] [create-default-us-central1-addDataset] Retrying task index 0
+[debug] [2022-08-29T15:56:47.564Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/Y2hhdGJvdC1kZW1vLWU1ZDhhL3VzLWNlbnRyYWwxL2FkZERhdGFzZXQvVi1uLV91S3NYaXM [none]
+[debug] [2022-08-29T15:56:48.493Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/Y2hhdGJvdC1kZW1vLWU1ZDhhL3VzLWNlbnRyYWwxL2FkZERhdGFzZXQvVi1uLV91S3NYaXM 200
+[debug] [2022-08-29T15:56:48.494Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/Y2hhdGJvdC1kZW1vLWU1ZDhhL3VzLWNlbnRyYWwxL2FkZERhdGFzZXQvVi1uLV91S3NYaXM {"name":"operations/Y2hhdGJvdC1kZW1vLWU1ZDhhL3VzLWNlbnRyYWwxL2FkZERhdGFzZXQvVi1uLV91S3NYaXM","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/chatbot-demo-e5d8a/locations/us-central1/functions/addDataset","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/chatbot-demo-e5d8a/locations/us-central1/functions/addDataset","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"addDataset","labels":{"deployment-tool":"cli-firebase"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-894679295388.us-central1.cloudfunctions.appspot.com/7b437368-fcbf-48d5-87f8-2aa0e3b78c00.zip?GoogleAccessId=service-551695444880@gcf-admin-robot.iam.gserviceaccount.com&Expires=1661790399&Signature=aP3JoiPCEVDy8Q8Os3Os%2FSBWXlSCRc7IL16aai1%2FilsMW8RyC5qz2W0wYfySBXSHGD6QIyiltWOfjdBIsYbv9gVcS1224dWURyXWva8bF2QO%2BeFczi6zMhmQNyCWZWzu91FzeS9uwrWKvlFaI4tmwpqsNU%2FPGuHqn0b%2FBJc6nQIG9ObtteTJZtBbmFShHi2PdCp%2BSRk3IB1uWMnDn%2Bgb4%2B9o3PHSLi%2FhNNFgz8CTpidmMIj%2FQ4BqgdrAHLv%2B3LrP%2B%2FGfo5F%2B5TjSbvQf%2FM3t0n8%2BF5tp4dXkDNqD0cO8VTBCkFSknRD0LozWnPgEZBHp8vZcY9E%2FsF3Fvjou3XH0Sw%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"chatbot-demo-e5d8a\",\"storageBucket\":\"chatbot-demo-e5d8a.appspot.com\",\"locationId\":\"asia-northeast1\"}","GCLOUD_PROJECT":"chatbot-demo-e5d8a"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2022-08-29T15:56:44Z"}}
+[debug] [2022-08-29T15:56:50.496Z] [create-default-us-central1-addDataset] Retrying task index 0
+[debug] [2022-08-29T15:56:50.497Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/Y2hhdGJvdC1kZW1vLWU1ZDhhL3VzLWNlbnRyYWwxL2FkZERhdGFzZXQvVi1uLV91S3NYaXM [none]
+[debug] [2022-08-29T15:56:51.475Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/Y2hhdGJvdC1kZW1vLWU1ZDhhL3VzLWNlbnRyYWwxL2FkZERhdGFzZXQvVi1uLV91S3NYaXM 200
+[debug] [2022-08-29T15:56:51.475Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/Y2hhdGJvdC1kZW1vLWU1ZDhhL3VzLWNlbnRyYWwxL2FkZERhdGFzZXQvVi1uLV91S3NYaXM {"name":"operations/Y2hhdGJvdC1kZW1vLWU1ZDhhL3VzLWNlbnRyYWwxL2FkZERhdGFzZXQvVi1uLV91S3NYaXM","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/chatbot-demo-e5d8a/locations/us-central1/functions/addDataset","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/chatbot-demo-e5d8a/locations/us-central1/functions/addDataset","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"addDataset","labels":{"deployment-tool":"cli-firebase"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-894679295388.us-central1.cloudfunctions.appspot.com/7b437368-fcbf-48d5-87f8-2aa0e3b78c00.zip?GoogleAccessId=service-551695444880@gcf-admin-robot.iam.gserviceaccount.com&Expires=1661790399&Signature=aP3JoiPCEVDy8Q8Os3Os%2FSBWXlSCRc7IL16aai1%2FilsMW8RyC5qz2W0wYfySBXSHGD6QIyiltWOfjdBIsYbv9gVcS1224dWURyXWva8bF2QO%2BeFczi6zMhmQNyCWZWzu91FzeS9uwrWKvlFaI4tmwpqsNU%2FPGuHqn0b%2FBJc6nQIG9ObtteTJZtBbmFShHi2PdCp%2BSRk3IB1uWMnDn%2Bgb4%2B9o3PHSLi%2FhNNFgz8CTpidmMIj%2FQ4BqgdrAHLv%2B3LrP%2B%2FGfo5F%2B5TjSbvQf%2FM3t0n8%2BF5tp4dXkDNqD0cO8VTBCkFSknRD0LozWnPgEZBHp8vZcY9E%2FsF3Fvjou3XH0Sw%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"chatbot-demo-e5d8a\",\"storageBucket\":\"chatbot-demo-e5d8a.appspot.com\",\"locationId\":\"asia-northeast1\"}","GCLOUD_PROJECT":"chatbot-demo-e5d8a"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2022-08-29T15:56:44Z"}}
+[debug] [2022-08-29T15:56:55.477Z] [create-default-us-central1-addDataset] Retrying task index 0
+[debug] [2022-08-29T15:56:55.477Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/Y2hhdGJvdC1kZW1vLWU1ZDhhL3VzLWNlbnRyYWwxL2FkZERhdGFzZXQvVi1uLV91S3NYaXM [none]
+[debug] [2022-08-29T15:56:56.254Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/Y2hhdGJvdC1kZW1vLWU1ZDhhL3VzLWNlbnRyYWwxL2FkZERhdGFzZXQvVi1uLV91S3NYaXM 200
+[debug] [2022-08-29T15:56:56.255Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/Y2hhdGJvdC1kZW1vLWU1ZDhhL3VzLWNlbnRyYWwxL2FkZERhdGFzZXQvVi1uLV91S3NYaXM {"name":"operations/Y2hhdGJvdC1kZW1vLWU1ZDhhL3VzLWNlbnRyYWwxL2FkZERhdGFzZXQvVi1uLV91S3NYaXM","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/chatbot-demo-e5d8a/locations/us-central1/functions/addDataset","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/chatbot-demo-e5d8a/locations/us-central1/functions/addDataset","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"addDataset","labels":{"deployment-tool":"cli-firebase"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-894679295388.us-central1.cloudfunctions.appspot.com/7b437368-fcbf-48d5-87f8-2aa0e3b78c00.zip?GoogleAccessId=service-551695444880@gcf-admin-robot.iam.gserviceaccount.com&Expires=1661790399&Signature=aP3JoiPCEVDy8Q8Os3Os%2FSBWXlSCRc7IL16aai1%2FilsMW8RyC5qz2W0wYfySBXSHGD6QIyiltWOfjdBIsYbv9gVcS1224dWURyXWva8bF2QO%2BeFczi6zMhmQNyCWZWzu91FzeS9uwrWKvlFaI4tmwpqsNU%2FPGuHqn0b%2FBJc6nQIG9ObtteTJZtBbmFShHi2PdCp%2BSRk3IB1uWMnDn%2Bgb4%2B9o3PHSLi%2FhNNFgz8CTpidmMIj%2FQ4BqgdrAHLv%2B3LrP%2B%2FGfo5F%2B5TjSbvQf%2FM3t0n8%2BF5tp4dXkDNqD0cO8VTBCkFSknRD0LozWnPgEZBHp8vZcY9E%2FsF3Fvjou3XH0Sw%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"chatbot-demo-e5d8a\",\"storageBucket\":\"chatbot-demo-e5d8a.appspot.com\",\"locationId\":\"asia-northeast1\"}","GCLOUD_PROJECT":"chatbot-demo-e5d8a"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2022-08-29T15:56:44Z","buildId":"3b032470-e8c7-4956-b930-802bb620c0cd","buildName":"projects/551695444880/locations/us-central1/builds/3b032470-e8c7-4956-b930-802bb620c0cd"}}
+[debug] [2022-08-29T15:57:04.256Z] [create-default-us-central1-addDataset] Retrying task index 0
+[debug] [2022-08-29T15:57:04.256Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/Y2hhdGJvdC1kZW1vLWU1ZDhhL3VzLWNlbnRyYWwxL2FkZERhdGFzZXQvVi1uLV91S3NYaXM [none]
+[debug] [2022-08-29T15:57:05.058Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/Y2hhdGJvdC1kZW1vLWU1ZDhhL3VzLWNlbnRyYWwxL2FkZERhdGFzZXQvVi1uLV91S3NYaXM 200
+[debug] [2022-08-29T15:57:05.058Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/Y2hhdGJvdC1kZW1vLWU1ZDhhL3VzLWNlbnRyYWwxL2FkZERhdGFzZXQvVi1uLV91S3NYaXM {"name":"operations/Y2hhdGJvdC1kZW1vLWU1ZDhhL3VzLWNlbnRyYWwxL2FkZERhdGFzZXQvVi1uLV91S3NYaXM","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/chatbot-demo-e5d8a/locations/us-central1/functions/addDataset","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/chatbot-demo-e5d8a/locations/us-central1/functions/addDataset","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"addDataset","labels":{"deployment-tool":"cli-firebase"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-894679295388.us-central1.cloudfunctions.appspot.com/7b437368-fcbf-48d5-87f8-2aa0e3b78c00.zip?GoogleAccessId=service-551695444880@gcf-admin-robot.iam.gserviceaccount.com&Expires=1661790399&Signature=aP3JoiPCEVDy8Q8Os3Os%2FSBWXlSCRc7IL16aai1%2FilsMW8RyC5qz2W0wYfySBXSHGD6QIyiltWOfjdBIsYbv9gVcS1224dWURyXWva8bF2QO%2BeFczi6zMhmQNyCWZWzu91FzeS9uwrWKvlFaI4tmwpqsNU%2FPGuHqn0b%2FBJc6nQIG9ObtteTJZtBbmFShHi2PdCp%2BSRk3IB1uWMnDn%2Bgb4%2B9o3PHSLi%2FhNNFgz8CTpidmMIj%2FQ4BqgdrAHLv%2B3LrP%2B%2FGfo5F%2B5TjSbvQf%2FM3t0n8%2BF5tp4dXkDNqD0cO8VTBCkFSknRD0LozWnPgEZBHp8vZcY9E%2FsF3Fvjou3XH0Sw%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"chatbot-demo-e5d8a\",\"storageBucket\":\"chatbot-demo-e5d8a.appspot.com\",\"locationId\":\"asia-northeast1\"}","GCLOUD_PROJECT":"chatbot-demo-e5d8a"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2022-08-29T15:56:44Z","buildId":"3b032470-e8c7-4956-b930-802bb620c0cd","buildName":"projects/551695444880/locations/us-central1/builds/3b032470-e8c7-4956-b930-802bb620c0cd"}}
+[debug] [2022-08-29T15:57:15.060Z] [create-default-us-central1-addDataset] Retrying task index 0
+[debug] [2022-08-29T15:57:15.061Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/Y2hhdGJvdC1kZW1vLWU1ZDhhL3VzLWNlbnRyYWwxL2FkZERhdGFzZXQvVi1uLV91S3NYaXM [none]
+[debug] [2022-08-29T15:57:15.822Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/Y2hhdGJvdC1kZW1vLWU1ZDhhL3VzLWNlbnRyYWwxL2FkZERhdGFzZXQvVi1uLV91S3NYaXM 200
+[debug] [2022-08-29T15:57:15.822Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/Y2hhdGJvdC1kZW1vLWU1ZDhhL3VzLWNlbnRyYWwxL2FkZERhdGFzZXQvVi1uLV91S3NYaXM {"name":"operations/Y2hhdGJvdC1kZW1vLWU1ZDhhL3VzLWNlbnRyYWwxL2FkZERhdGFzZXQvVi1uLV91S3NYaXM","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/chatbot-demo-e5d8a/locations/us-central1/functions/addDataset","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/chatbot-demo-e5d8a/locations/us-central1/functions/addDataset","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"addDataset","labels":{"deployment-tool":"cli-firebase"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-894679295388.us-central1.cloudfunctions.appspot.com/7b437368-fcbf-48d5-87f8-2aa0e3b78c00.zip?GoogleAccessId=service-551695444880@gcf-admin-robot.iam.gserviceaccount.com&Expires=1661790399&Signature=aP3JoiPCEVDy8Q8Os3Os%2FSBWXlSCRc7IL16aai1%2FilsMW8RyC5qz2W0wYfySBXSHGD6QIyiltWOfjdBIsYbv9gVcS1224dWURyXWva8bF2QO%2BeFczi6zMhmQNyCWZWzu91FzeS9uwrWKvlFaI4tmwpqsNU%2FPGuHqn0b%2FBJc6nQIG9ObtteTJZtBbmFShHi2PdCp%2BSRk3IB1uWMnDn%2Bgb4%2B9o3PHSLi%2FhNNFgz8CTpidmMIj%2FQ4BqgdrAHLv%2B3LrP%2B%2FGfo5F%2B5TjSbvQf%2FM3t0n8%2BF5tp4dXkDNqD0cO8VTBCkFSknRD0LozWnPgEZBHp8vZcY9E%2FsF3Fvjou3XH0Sw%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"chatbot-demo-e5d8a\",\"storageBucket\":\"chatbot-demo-e5d8a.appspot.com\",\"locationId\":\"asia-northeast1\"}","GCLOUD_PROJECT":"chatbot-demo-e5d8a"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2022-08-29T15:56:44Z","buildId":"3b032470-e8c7-4956-b930-802bb620c0cd","buildName":"projects/551695444880/locations/us-central1/builds/3b032470-e8c7-4956-b930-802bb620c0cd"}}
+[debug] [2022-08-29T15:57:25.823Z] [create-default-us-central1-addDataset] Retrying task index 0
+[debug] [2022-08-29T15:57:25.824Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/Y2hhdGJvdC1kZW1vLWU1ZDhhL3VzLWNlbnRyYWwxL2FkZERhdGFzZXQvVi1uLV91S3NYaXM [none]
+[debug] [2022-08-29T15:57:26.655Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/Y2hhdGJvdC1kZW1vLWU1ZDhhL3VzLWNlbnRyYWwxL2FkZERhdGFzZXQvVi1uLV91S3NYaXM 200
+[debug] [2022-08-29T15:57:26.656Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/Y2hhdGJvdC1kZW1vLWU1ZDhhL3VzLWNlbnRyYWwxL2FkZERhdGFzZXQvVi1uLV91S3NYaXM {"name":"operations/Y2hhdGJvdC1kZW1vLWU1ZDhhL3VzLWNlbnRyYWwxL2FkZERhdGFzZXQvVi1uLV91S3NYaXM","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/chatbot-demo-e5d8a/locations/us-central1/functions/addDataset","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/chatbot-demo-e5d8a/locations/us-central1/functions/addDataset","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"addDataset","labels":{"deployment-tool":"cli-firebase"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-894679295388.us-central1.cloudfunctions.appspot.com/7b437368-fcbf-48d5-87f8-2aa0e3b78c00.zip?GoogleAccessId=service-551695444880@gcf-admin-robot.iam.gserviceaccount.com&Expires=1661790399&Signature=aP3JoiPCEVDy8Q8Os3Os%2FSBWXlSCRc7IL16aai1%2FilsMW8RyC5qz2W0wYfySBXSHGD6QIyiltWOfjdBIsYbv9gVcS1224dWURyXWva8bF2QO%2BeFczi6zMhmQNyCWZWzu91FzeS9uwrWKvlFaI4tmwpqsNU%2FPGuHqn0b%2FBJc6nQIG9ObtteTJZtBbmFShHi2PdCp%2BSRk3IB1uWMnDn%2Bgb4%2B9o3PHSLi%2FhNNFgz8CTpidmMIj%2FQ4BqgdrAHLv%2B3LrP%2B%2FGfo5F%2B5TjSbvQf%2FM3t0n8%2BF5tp4dXkDNqD0cO8VTBCkFSknRD0LozWnPgEZBHp8vZcY9E%2FsF3Fvjou3XH0Sw%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"chatbot-demo-e5d8a\",\"storageBucket\":\"chatbot-demo-e5d8a.appspot.com\",\"locationId\":\"asia-northeast1\"}","GCLOUD_PROJECT":"chatbot-demo-e5d8a"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2022-08-29T15:56:44Z","buildId":"3b032470-e8c7-4956-b930-802bb620c0cd","buildName":"projects/551695444880/locations/us-central1/builds/3b032470-e8c7-4956-b930-802bb620c0cd"}}
+[debug] [2022-08-29T15:57:36.657Z] [create-default-us-central1-addDataset] Retrying task index 0
+[debug] [2022-08-29T15:57:36.657Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/Y2hhdGJvdC1kZW1vLWU1ZDhhL3VzLWNlbnRyYWwxL2FkZERhdGFzZXQvVi1uLV91S3NYaXM [none]
+[debug] [2022-08-29T15:57:37.556Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/Y2hhdGJvdC1kZW1vLWU1ZDhhL3VzLWNlbnRyYWwxL2FkZERhdGFzZXQvVi1uLV91S3NYaXM 200
+[debug] [2022-08-29T15:57:37.557Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/Y2hhdGJvdC1kZW1vLWU1ZDhhL3VzLWNlbnRyYWwxL2FkZERhdGFzZXQvVi1uLV91S3NYaXM {"name":"operations/Y2hhdGJvdC1kZW1vLWU1ZDhhL3VzLWNlbnRyYWwxL2FkZERhdGFzZXQvVi1uLV91S3NYaXM","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/chatbot-demo-e5d8a/locations/us-central1/functions/addDataset","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/chatbot-demo-e5d8a/locations/us-central1/functions/addDataset","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"addDataset","labels":{"deployment-tool":"cli-firebase"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-894679295388.us-central1.cloudfunctions.appspot.com/7b437368-fcbf-48d5-87f8-2aa0e3b78c00.zip?GoogleAccessId=service-551695444880@gcf-admin-robot.iam.gserviceaccount.com&Expires=1661790399&Signature=aP3JoiPCEVDy8Q8Os3Os%2FSBWXlSCRc7IL16aai1%2FilsMW8RyC5qz2W0wYfySBXSHGD6QIyiltWOfjdBIsYbv9gVcS1224dWURyXWva8bF2QO%2BeFczi6zMhmQNyCWZWzu91FzeS9uwrWKvlFaI4tmwpqsNU%2FPGuHqn0b%2FBJc6nQIG9ObtteTJZtBbmFShHi2PdCp%2BSRk3IB1uWMnDn%2Bgb4%2B9o3PHSLi%2FhNNFgz8CTpidmMIj%2FQ4BqgdrAHLv%2B3LrP%2B%2FGfo5F%2B5TjSbvQf%2FM3t0n8%2BF5tp4dXkDNqD0cO8VTBCkFSknRD0LozWnPgEZBHp8vZcY9E%2FsF3Fvjou3XH0Sw%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"chatbot-demo-e5d8a\",\"storageBucket\":\"chatbot-demo-e5d8a.appspot.com\",\"locationId\":\"asia-northeast1\"}","GCLOUD_PROJECT":"chatbot-demo-e5d8a"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2022-08-29T15:56:44Z","buildId":"3b032470-e8c7-4956-b930-802bb620c0cd","buildName":"projects/551695444880/locations/us-central1/builds/3b032470-e8c7-4956-b930-802bb620c0cd"}}
+[debug] [2022-08-29T15:57:53.002Z] ----------------------------------------------------------------------
+[debug] [2022-08-29T15:57:53.003Z] Command:       /Users/kawakitasho/.nodebrew/node/v18.8.0/bin/node /Users/kawakitasho/.nodebrew/current/bin/firebase deploy
+[debug] [2022-08-29T15:57:53.003Z] CLI Version:   11.8.0
+[debug] [2022-08-29T15:57:53.003Z] Platform:      darwin
+[debug] [2022-08-29T15:57:53.003Z] Node Version:  v18.8.0
+[debug] [2022-08-29T15:57:53.004Z] Time:          Tue Aug 30 2022 00:57:53 GMT+0900 (日本標準時)
+[debug] [2022-08-29T15:57:53.004Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-08-29T15:57:53.032Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-08-29T15:57:53.033Z] > authorizing via signed-in user (shokawakita0630@gmail.com)
+[debug] [2022-08-29T15:57:53.033Z] [iam] checking project chatbot-demo-e5d8a for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-08-29T15:57:53.033Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatbot-demo-e5d8a:testIamPermissions [none]
+[debug] [2022-08-29T15:57:53.034Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatbot-demo-e5d8a:testIamPermissions x-goog-quota-user=projects/chatbot-demo-e5d8a
+[debug] [2022-08-29T15:57:53.034Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatbot-demo-e5d8a:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-08-29T15:57:54.056Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatbot-demo-e5d8a:testIamPermissions 200
+[debug] [2022-08-29T15:57:54.057Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatbot-demo-e5d8a:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-08-29T15:57:54.057Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/chatbot-demo-e5d8a/serviceAccounts/chatbot-demo-e5d8a@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2022-08-29T15:57:54.058Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/chatbot-demo-e5d8a/serviceAccounts/chatbot-demo-e5d8a@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2022-08-29T15:57:54.947Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/chatbot-demo-e5d8a/serviceAccounts/chatbot-demo-e5d8a@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2022-08-29T15:57:54.947Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/chatbot-demo-e5d8a/serviceAccounts/chatbot-demo-e5d8a@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2022-08-29T15:57:54.948Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chatbot-demo-e5d8a [none]
+[debug] [2022-08-29T15:57:55.607Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chatbot-demo-e5d8a 200
+[debug] [2022-08-29T15:57:55.607Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chatbot-demo-e5d8a {"projectId":"chatbot-demo-e5d8a","projectNumber":"551695444880","displayName":"chatbot-demo","name":"projects/chatbot-demo-e5d8a","resources":{"hostingSite":"chatbot-demo-e5d8a","storageBucket":"chatbot-demo-e5d8a.appspot.com","locationId":"asia-northeast1"},"state":"ACTIVE","etag":"1_39b8d592-2906-4999-afdc-5bd7276f3df0"}
+[info] 
+[info] === Deploying to 'chatbot-demo-e5d8a'...
+[info] 
+[info] i  deploying firestore, functions, hosting 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] Running command: npm --prefix "$RESOURCE_DIR" run build
+[info] ✔  functions: Finished running predeploy script. 
+[info] i  firestore: reading indexes from firestore.indexes.json... 
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2022-08-29T15:57:59.389Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/chatbot-demo-e5d8a:test [none]
+[debug] [2022-08-29T15:57:59.389Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/chatbot-demo-e5d8a:test [omitted]
+[debug] [2022-08-29T15:58:00.850Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/chatbot-demo-e5d8a:test 200
+[debug] [2022-08-29T15:58:00.850Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/chatbot-demo-e5d8a:test {}
+[info] ✔  cloud.firestore: rules file firestore.rules compiled successfully 
+[debug] [2022-08-29T15:58:00.853Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chatbot-demo-e5d8a [none]
+[debug] [2022-08-29T15:58:01.457Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chatbot-demo-e5d8a 200
+[debug] [2022-08-29T15:58:01.457Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chatbot-demo-e5d8a {"projectId":"chatbot-demo-e5d8a","projectNumber":"551695444880","displayName":"chatbot-demo","name":"projects/chatbot-demo-e5d8a","resources":{"hostingSite":"chatbot-demo-e5d8a","storageBucket":"chatbot-demo-e5d8a.appspot.com","locationId":"asia-northeast1"},"state":"ACTIVE","etag":"1_39b8d592-2906-4999-afdc-5bd7276f3df0"}
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2022-08-29T15:58:01.460Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatbot-demo-e5d8a/services/cloudfunctions.googleapis.com [none]
+[debug] [2022-08-29T15:58:01.462Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatbot-demo-e5d8a/services/runtimeconfig.googleapis.com [none]
+[debug] [2022-08-29T15:58:01.464Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatbot-demo-e5d8a/services/cloudbuild.googleapis.com [none]
+[debug] [2022-08-29T15:58:01.466Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatbot-demo-e5d8a/services/artifactregistry.googleapis.com [none]
+[debug] [2022-08-29T15:58:02.662Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatbot-demo-e5d8a/services/runtimeconfig.googleapis.com 200
+[debug] [2022-08-29T15:58:02.662Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatbot-demo-e5d8a/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2022-08-29T15:58:02.665Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatbot-demo-e5d8a/services/cloudfunctions.googleapis.com 200
+[debug] [2022-08-29T15:58:02.666Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatbot-demo-e5d8a/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2022-08-29T15:58:02.667Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatbot-demo-e5d8a/services/artifactregistry.googleapis.com 200
+[debug] [2022-08-29T15:58:02.667Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatbot-demo-e5d8a/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2022-08-29T15:58:02.668Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatbot-demo-e5d8a/services/cloudbuild.googleapis.com 200
+[debug] [2022-08-29T15:58:02.668Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatbot-demo-e5d8a/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2022-08-29T15:58:02.669Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chatbot-demo-e5d8a/adminSdkConfig [none]
+[debug] [2022-08-29T15:58:03.376Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chatbot-demo-e5d8a/adminSdkConfig 200
+[debug] [2022-08-29T15:58:03.377Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chatbot-demo-e5d8a/adminSdkConfig {"projectId":"chatbot-demo-e5d8a","storageBucket":"chatbot-demo-e5d8a.appspot.com","locationId":"asia-northeast1"}
+[debug] [2022-08-29T15:58:03.378Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/chatbot-demo-e5d8a/configs [none]
+[debug] [2022-08-29T15:58:03.993Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/chatbot-demo-e5d8a/configs 200
+[debug] [2022-08-29T15:58:03.993Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/chatbot-demo-e5d8a/configs {}
+[info] i  functions: preparing codebase default for deployment 
+[debug] [2022-08-29T15:58:03.996Z] Validating nodejs source
+[debug] [2022-08-29T15:58:04.826Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "tslint --project tsconfig.json",
+    "build": "tsc",
+    "serve": "npm run build && firebase serve --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^8.6.0",
+    "firebase-functions": "^3.3.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.1.6",
+    "tslint": "^5.12.0",
+    "typescript": "^4.2.2"
+  },
+  "private": true,
+  "version": "1.0.0",
+  "directories": {
+    "lib": "lib"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
+[debug] [2022-08-29T15:58:04.827Z] Building nodejs source
+[debug] [2022-08-29T15:58:04.827Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-29T15:58:05.112Z] Serving at port 9005
+
+[debug] [2022-08-29T15:58:05.232Z] Got response from /__/functions.yaml {"endpoints":{"addDataset":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"addDataset"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-29T15:58:05.234Z] shutdown requested via /__/quitquitquit
+
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged /Users/kawakitasho/Desktop/トラゼミ/chatbot-demo/functions (76.57 KB) for uploading 
+[debug] [2022-08-29T15:58:05.262Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/chatbot-demo-e5d8a/locations/-/functions [none]
+[debug] [2022-08-29T15:58:06.498Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/chatbot-demo-e5d8a/locations/-/functions 200
+[debug] [2022-08-29T15:58:06.499Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/chatbot-demo-e5d8a/locations/-/functions {"functions":[{"name":"projects/chatbot-demo-e5d8a/locations/us-central1/functions/addDataset","httpsTrigger":{"url":"https://us-central1-chatbot-demo-e5d8a.cloudfunctions.net/addDataset","securityLevel":"SECURE_ALWAYS"},"status":"DEPLOY_IN_PROGRESS","entryPoint":"addDataset","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"chatbot-demo-e5d8a@appspot.gserviceaccount.com","updateTime":"2022-08-29T15:56:44.078Z","versionId":"1","labels":{"deployment-tool":"cli-firebase"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-894679295388.us-central1.cloudfunctions.appspot.com/7b437368-fcbf-48d5-87f8-2aa0e3b78c00.zip","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"chatbot-demo-e5d8a\",\"storageBucket\":\"chatbot-demo-e5d8a.appspot.com\",\"locationId\":\"asia-northeast1\"}","GCLOUD_PROJECT":"chatbot-demo-e5d8a"},"runtime":"nodejs16","ingressSettings":"ALLOW_ALL","buildId":"3b032470-e8c7-4956-b930-802bb620c0cd","buildName":"projects/551695444880/locations/us-central1/builds/3b032470-e8c7-4956-b930-802bb620c0cd","dockerRegistry":"ARTIFACT_REGISTRY"}]}
+[debug] [2022-08-29T15:58:06.500Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2alpha/projects/chatbot-demo-e5d8a/locations/-/functions [none]
+[debug] [2022-08-29T15:58:08.185Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2alpha/projects/chatbot-demo-e5d8a/locations/-/functions 200
+[debug] [2022-08-29T15:58:08.185Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2alpha/projects/chatbot-demo-e5d8a/locations/-/functions {}
+[debug] [2022-08-29T15:58:08.195Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chatbot-demo-e5d8a [none]
+[debug] [2022-08-29T15:58:08.785Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chatbot-demo-e5d8a 200
+[debug] [2022-08-29T15:58:08.785Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chatbot-demo-e5d8a {"projectId":"chatbot-demo-e5d8a","projectNumber":"551695444880","displayName":"chatbot-demo","name":"projects/chatbot-demo-e5d8a","resources":{"hostingSite":"chatbot-demo-e5d8a","storageBucket":"chatbot-demo-e5d8a.appspot.com","locationId":"asia-northeast1"},"state":"ACTIVE","etag":"1_39b8d592-2906-4999-afdc-5bd7276f3df0"}
+[debug] [2022-08-29T15:58:08.789Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/551695444880/sites/chatbot-demo-e5d8a/versions [none]
+[debug] [2022-08-29T15:58:08.789Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/551695444880/sites/chatbot-demo-e5d8a/versions {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-08-29T15:58:09.852Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/551695444880/sites/chatbot-demo-e5d8a/versions 200
+[debug] [2022-08-29T15:58:09.852Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/551695444880/sites/chatbot-demo-e5d8a/versions {"name":"projects/551695444880/sites/chatbot-demo-e5d8a/versions/751282efba97900f","status":"CREATED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-08-29T15:58:09.855Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/chatbot-demo-e5d8a/releases pageSize=10&pageToken=
+[debug] [2022-08-29T15:58:09.857Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/chatbot-demo-e5d8a/databases/(default)/collectionGroups/-/indexes [none]
+[debug] [2022-08-29T15:58:10.283Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/chatbot-demo-e5d8a/databases/(default)/collectionGroups/-/indexes 200
+[debug] [2022-08-29T15:58:10.283Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/chatbot-demo-e5d8a/databases/(default)/collectionGroups/-/indexes {}
+[debug] [2022-08-29T15:58:10.283Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/chatbot-demo-e5d8a/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false [none]
+[debug] [2022-08-29T15:58:10.678Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/chatbot-demo-e5d8a/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false 200
+[debug] [2022-08-29T15:58:10.679Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/chatbot-demo-e5d8a/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false {"fields":[{"name":"projects/chatbot-demo-e5d8a/databases/(default)/collectionGroups/__default__/fields/*","indexConfig":{"indexes":[{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"ASCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"DESCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","arrayConfig":"CONTAINS"}],"state":"READY"}]}}]}
+[info] ✔  firestore: deployed indexes in firestore.indexes.json successfully 
+[debug] [2022-08-29T15:58:11.140Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/chatbot-demo-e5d8a/releases 200
+[debug] [2022-08-29T15:58:11.140Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/chatbot-demo-e5d8a/releases {"releases":[{"name":"projects/chatbot-demo-e5d8a/releases/cloud.firestore","rulesetName":"projects/chatbot-demo-e5d8a/rulesets/b4a37081-55b7-49bd-8c88-a03a8069f729","createTime":"2022-08-29T03:08:26.297166Z","updateTime":"2022-08-29T15:56:42.957304Z"}]}
+[debug] [2022-08-29T15:58:11.141Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/chatbot-demo-e5d8a/rulesets/b4a37081-55b7-49bd-8c88-a03a8069f729 [none]
+[debug] [2022-08-29T15:58:11.732Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/chatbot-demo-e5d8a/rulesets/b4a37081-55b7-49bd-8c88-a03a8069f729 200
+[debug] [2022-08-29T15:58:11.733Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/chatbot-demo-e5d8a/rulesets/b4a37081-55b7-49bd-8c88-a03a8069f729 [omitted]
+[info] i  firestore: latest version of firestore.rules already up to date, skipping upload... 
+[debug] [2022-08-29T15:58:11.735Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/chatbot-demo-e5d8a/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2022-08-29T15:58:11.735Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/chatbot-demo-e5d8a/locations/us-central1/functions:generateUploadUrl {}
+[debug] [2022-08-29T15:58:12.773Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/chatbot-demo-e5d8a/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2022-08-29T15:58:12.773Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/chatbot-demo-e5d8a/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/uploads-894679295388.us-central1.cloudfunctions.appspot.com/83367bf2-5456-442c-a359-edc0b324a062.zip?GoogleAccessId=service-551695444880@gcf-admin-robot.iam.gserviceaccount.com&Expires=1661790492&Signature=g%2FJKtjCJkJRU7hB7EltoNH%2FKRrXPH6gy9qUFWK60cXQvpyc4yzwreBfMGLdqa27PjiFBmcnnfGDgy%2BeLdJX7VDH%2B2S1HxMTWRvH1KfgmaWl%2FyLLajDTLs0jfH2wPMZq4MrdMd7l88vf65dDaFPU5P34jAZjPYdZsFZBTHTp%2F0MWnquHkReLzg97K93ojTEjUbZyQVQcewdOl4zgvA3MGYCb4cAiC7hTTxCgbt6gvk6u3uohHmQ7aiCD1dgiQ5BVhxLj4cYnym%2B%2FK9hYSyN5AbaUBRpGHpoeGtQ%2BXzCat6JTJ8j57YESGGJKYaqeFBm4xmnuKaXuocqiRjJv0s7tOhA%3D%3D"}
+[debug] [2022-08-29T15:58:12.775Z] >>> [apiv2][query] PUT https://storage.googleapis.com/uploads-894679295388.us-central1.cloudfunctions.appspot.com/83367bf2-5456-442c-a359-edc0b324a062.zip GoogleAccessId=service-551695444880%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1661790492&Signature=g%2FJKtjCJkJRU7hB7EltoNH%2FKRrXPH6gy9qUFWK60cXQvpyc4yzwreBfMGLdqa27PjiFBmcnnfGDgy%2BeLdJX7VDH%2B2S1HxMTWRvH1KfgmaWl%2FyLLajDTLs0jfH2wPMZq4MrdMd7l88vf65dDaFPU5P34jAZjPYdZsFZBTHTp%2F0MWnquHkReLzg97K93ojTEjUbZyQVQcewdOl4zgvA3MGYCb4cAiC7hTTxCgbt6gvk6u3uohHmQ7aiCD1dgiQ5BVhxLj4cYnym%2B%2FK9hYSyN5AbaUBRpGHpoeGtQ%2BXzCat6JTJ8j57YESGGJKYaqeFBm4xmnuKaXuocqiRjJv0s7tOhA%3D%3D
+[debug] [2022-08-29T15:58:12.775Z] >>> [apiv2][body] PUT https://storage.googleapis.com/uploads-894679295388.us-central1.cloudfunctions.appspot.com/83367bf2-5456-442c-a359-edc0b324a062.zip [stream]
+[debug] [2022-08-29T15:58:13.820Z] <<< [apiv2][status] PUT https://storage.googleapis.com/uploads-894679295388.us-central1.cloudfunctions.appspot.com/83367bf2-5456-442c-a359-edc0b324a062.zip 200
+[debug] [2022-08-29T15:58:13.820Z] <<< [apiv2][body] PUT https://storage.googleapis.com/uploads-894679295388.us-central1.cloudfunctions.appspot.com/83367bf2-5456-442c-a359-edc0b324a062.zip [omitted]
+[info] ✔  functions: functions folder uploaded successfully 
+[info] i  hosting[chatbot-demo-e5d8a]: beginning deploy... 
+[info] i  hosting[chatbot-demo-e5d8a]: found 15 files in build 
+[debug] [2022-08-29T15:58:13.831Z] [hosting] uploading with 200 concurrency
+[debug] [2022-08-29T15:58:13.840Z] [hosting] hash cache [YnVpbGQ] stored for 15 files
+[debug] [2022-08-29T15:58:13.840Z] [hosting][hash queue][FINAL] {"max":2,"min":0,"avg":0,"active":0,"complete":15,"success":15,"errored":0,"retried":0,"total":15,"elapsed":3}
+[debug] [2022-08-29T15:58:13.841Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/551695444880/sites/chatbot-demo-e5d8a/versions/751282efba97900f:populateFiles [none]
+[debug] [2022-08-29T15:58:13.841Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/551695444880/sites/chatbot-demo-e5d8a/versions/751282efba97900f:populateFiles {"files":{"/asset-manifest.json":"7d2f87942e34b47074579b65a98fac4743911914035ef99a16871d5a4918097a","/favicon.ico":"b72f7455f00e4e58792d2bca892abb068e2213838c0316d6b7a0d6d16acd1955","/index.html":"f69e6939bb2264db6b429de5b258536950034602857e4648a5482826473c7c9d","/logo192.png":"caff018b7f1e8fd481eb1c50d75b0ef236bcd5078b1d15c8bb348453fee30293","/logo512.png":"191fc21360b4ccfb1cda11a1efb97f489ed22672ca83f4064316802bbfdd750e","/manifest.json":"341d52628782f8ac9290bbfc43298afccb47b7cbfcee146ae30cf0f46bc30900","/robots.txt":"391d14b3c2f8c9143a27a28c7399585142228d4d1bdbe2c87ac946de411fa9a2","/static/css/main.a091dce2.css":"62d2c21e5cb3df3608106776d9ea1928d4496ba84e9113df20a24e8e34f287fb","/static/css/main.a091dce2.css.map":"d9a824efe38ba7b30e60df4c0b132aba8d28221fd38921a732ac6718daf87770","/static/js/787.5f1195d9.chunk.js":"98647f339801b571d05324bb0ae14f7898149f350ee035a483c146d1374b584a","/static/js/787.5f1195d9.chunk.js.map":"e9e8cdf66061c0d48d75650fca7a4003f828f86e9b34ca36c7ba9d5329542bff","/static/js/main.e7b5c069.js":"eb42c7360b202f5369e95bde6d1ae87e75d41136d1c82ebdec66f63142085a5b","/static/js/main.e7b5c069.js.LICENSE.txt":"cf01c7fb4cbec16265bab4157398efb1b9b46a4811ac48c0bc7ab590b6a16473","/static/js/main.e7b5c069.js.map":"d5c1ad1a4f5029b1d2308314a45acdc534f4c848ae847849a2168338cf5b33fb","/static/media/NoProfile.5df52e6628f3d3e9269f.png":"3d8b83d43721212b3d7de070eb4ba0c5a58faaf79de5a67f2e8458185e342df5"}}
+[debug] [2022-08-29T15:58:14.675Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/551695444880/sites/chatbot-demo-e5d8a/versions/751282efba97900f:populateFiles 200
+[debug] [2022-08-29T15:58:14.675Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/551695444880/sites/chatbot-demo-e5d8a/versions/751282efba97900f:populateFiles {"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/chatbot-demo-e5d8a/versions/751282efba97900f/files"}
+[debug] [2022-08-29T15:58:14.676Z] [hosting][populate queue][FINAL] {"max":836,"min":836,"avg":836,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":837}
+[debug] [2022-08-29T15:58:14.676Z] [hosting] uploads queued: 0
+[debug] [2022-08-29T15:58:14.676Z] [hosting][upload queue][FINAL] {"max":0,"min":9999999999,"avg":0,"active":0,"complete":0,"success":0,"errored":0,"retried":0,"total":0,"elapsed":1661788694676}
+[info] ✔  hosting[chatbot-demo-e5d8a]: file upload complete 
+[debug] [2022-08-29T15:58:14.677Z] [hosting] deploy completed after 855ms
+[debug] [2022-08-29T15:58:14.680Z] [rules] releasing cloud.firestore with ruleset projects/chatbot-demo-e5d8a/rulesets/b4a37081-55b7-49bd-8c88-a03a8069f729
+[debug] [2022-08-29T15:58:14.681Z] >>> [apiv2][query] PATCH https://firebaserules.googleapis.com/v1/projects/chatbot-demo-e5d8a/releases/cloud.firestore [none]
+[debug] [2022-08-29T15:58:14.681Z] >>> [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/chatbot-demo-e5d8a/releases/cloud.firestore {"release":{"name":"projects/chatbot-demo-e5d8a/releases/cloud.firestore","rulesetName":"projects/chatbot-demo-e5d8a/rulesets/b4a37081-55b7-49bd-8c88-a03a8069f729"}}
+[debug] [2022-08-29T15:58:15.225Z] <<< [apiv2][status] PATCH https://firebaserules.googleapis.com/v1/projects/chatbot-demo-e5d8a/releases/cloud.firestore 200
+[debug] [2022-08-29T15:58:15.225Z] <<< [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/chatbot-demo-e5d8a/releases/cloud.firestore {"name":"projects/chatbot-demo-e5d8a/releases/cloud.firestore","rulesetName":"projects/chatbot-demo-e5d8a/rulesets/b4a37081-55b7-49bd-8c88-a03a8069f729","createTime":"2022-08-29T03:08:26.297166Z","updateTime":"2022-08-29T15:58:15.301688Z"}
+[debug] [2022-08-29T15:58:15.225Z] [rules] updated release projects/chatbot-demo-e5d8a/releases/cloud.firestore
+[info] ✔  firestore: released rules firestore.rules to cloud.firestore 
+[info] i  functions: updating Node.js 16 function addDataset(us-central1)... 
+[debug] [2022-08-29T15:58:15.230Z] >>> [apiv2][query] PATCH https://cloudfunctions.googleapis.com/v1/projects/chatbot-demo-e5d8a/locations/us-central1/functions/addDataset updateMask=name%2CsourceUploadUrl%2CentryPoint%2Cruntime%2CdockerRegistry%2Clabels%2ChttpsTrigger.securityLevel%2CenvironmentVariables%2CavailableMemoryMb%2CsourceToken
+[debug] [2022-08-29T15:58:15.231Z] >>> [apiv2][body] PATCH https://cloudfunctions.googleapis.com/v1/projects/chatbot-demo-e5d8a/locations/us-central1/functions/addDataset {"name":"projects/chatbot-demo-e5d8a/locations/us-central1/functions/addDataset","sourceUploadUrl":"https://storage.googleapis.com/uploads-894679295388.us-central1.cloudfunctions.appspot.com/83367bf2-5456-442c-a359-edc0b324a062.zip?GoogleAccessId=service-551695444880@gcf-admin-robot.iam.gserviceaccount.com&Expires=1661790492&Signature=g%2FJKtjCJkJRU7hB7EltoNH%2FKRrXPH6gy9qUFWK60cXQvpyc4yzwreBfMGLdqa27PjiFBmcnnfGDgy%2BeLdJX7VDH%2B2S1HxMTWRvH1KfgmaWl%2FyLLajDTLs0jfH2wPMZq4MrdMd7l88vf65dDaFPU5P34jAZjPYdZsFZBTHTp%2F0MWnquHkReLzg97K93ojTEjUbZyQVQcewdOl4zgvA3MGYCb4cAiC7hTTxCgbt6gvk6u3uohHmQ7aiCD1dgiQ5BVhxLj4cYnym%2B%2FK9hYSyN5AbaUBRpGHpoeGtQ%2BXzCat6JTJ8j57YESGGJKYaqeFBm4xmnuKaXuocqiRjJv0s7tOhA%3D%3D","entryPoint":"addDataset","runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY","labels":{"deployment-tool":"cli-firebase"},"httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"chatbot-demo-e5d8a\",\"storageBucket\":\"chatbot-demo-e5d8a.appspot.com\",\"locationId\":\"asia-northeast1\"}","GCLOUD_PROJECT":"chatbot-demo-e5d8a"},"availableMemoryMb":256}
+[debug] [2022-08-29T15:58:16.415Z] <<< [apiv2][status] PATCH https://cloudfunctions.googleapis.com/v1/projects/chatbot-demo-e5d8a/locations/us-central1/functions/addDataset 400
+[debug] [2022-08-29T15:58:16.415Z] <<< [apiv2][body] PATCH https://cloudfunctions.googleapis.com/v1/projects/chatbot-demo-e5d8a/locations/us-central1/functions/addDataset {"error":{"code":400,"message":"An operation on function addDataset in region us-central1 in project chatbot-demo-e5d8a is already in progress. Please try again later.","status":"FAILED_PRECONDITION"}}
+[warn] ⚠  functions: failed to update function projects/chatbot-demo-e5d8a/locations/us-central1/functions/addDataset 
+[error] Failed to update function projects/chatbot-demo-e5d8a/locations/us-central1/functions/addDataset
+[debug] [2022-08-29T15:58:16.424Z] Total Function Deployment time: 1188
+[debug] [2022-08-29T15:58:16.424Z] 1 Functions Deployed
+[debug] [2022-08-29T15:58:16.424Z] 1 Functions Errored
+[debug] [2022-08-29T15:58:16.424Z] 0 Function Deployments Aborted
+[debug] [2022-08-29T15:58:16.424Z] Average Function Deployment time: 1188
+[info] 
+[info] Functions deploy had errors with the following functions:
+	addDataset(us-central1)
+[debug] [2022-08-29T15:58:16.968Z] Not printing URL for HTTPS function. Typically this means it didn't match a filter or we failed deployment
+[info] i  functions: cleaning up build files... 
+[debug] [2022-08-29T15:58:16.970Z] >>> [apiv2][query] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/chatbot-demo-e5d8a/locations/us-central1/repositories/gcf-artifacts/packages/add_dataset [none]
+[debug] [2022-08-29T15:58:16.971Z] >>> [apiv2][query] GET https://us.gcr.io/v2/chatbot-demo-e5d8a/gcf/us-central1/tags/list [none]
+[debug] [2022-08-29T15:58:18.307Z] <<< [apiv2][status] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/chatbot-demo-e5d8a/locations/us-central1/repositories/gcf-artifacts/packages/add_dataset 200
+[debug] [2022-08-29T15:58:18.307Z] <<< [apiv2][body] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/chatbot-demo-e5d8a/locations/us-central1/repositories/gcf-artifacts/packages/add_dataset {"name":"projects/chatbot-demo-e5d8a/locations/us-central1/operations/103630e4-1b0e-4061-b0d5-1684a2305a55","metadata":{"@type":"type.googleapis.com/google.devtools.artifactregistry.v1beta2.OperationMetadata"}}
+[debug] [2022-08-29T15:58:18.308Z] >>> [apiv2][query] GET https://artifactregistry.googleapis.com/v1beta2/projects/chatbot-demo-e5d8a/locations/us-central1/operations/103630e4-1b0e-4061-b0d5-1684a2305a55 [none]
+[debug] [2022-08-29T15:58:19.730Z] <<< [apiv2][status] GET https://artifactregistry.googleapis.com/v1beta2/projects/chatbot-demo-e5d8a/locations/us-central1/operations/103630e4-1b0e-4061-b0d5-1684a2305a55 200
+[debug] [2022-08-29T15:58:19.730Z] <<< [apiv2][body] GET https://artifactregistry.googleapis.com/v1beta2/projects/chatbot-demo-e5d8a/locations/us-central1/operations/103630e4-1b0e-4061-b0d5-1684a2305a55 {"name":"projects/chatbot-demo-e5d8a/locations/us-central1/operations/103630e4-1b0e-4061-b0d5-1684a2305a55","metadata":{"@type":"type.googleapis.com/google.devtools.artifactregistry.v1beta2.OperationMetadata"},"done":true,"response":{"@type":"type.googleapis.com/google.protobuf.Empty"}}
+[debug] [2022-08-29T15:58:19.730Z] <<< [apiv2][status] GET https://us.gcr.io/v2/chatbot-demo-e5d8a/gcf/us-central1/tags/list 200
+[debug] [2022-08-29T15:58:19.730Z] <<< [apiv2][body] GET https://us.gcr.io/v2/chatbot-demo-e5d8a/gcf/us-central1/tags/list {"child":[],"manifest":{},"name":"chatbot-demo-e5d8a/gcf/us-central1","tags":[]}
+[debug] [2022-08-29T15:58:19.730Z] Could not find image for function projects/chatbot-demo-e5d8a/locations/us-central1/functions/addDataset
+[debug] [2022-08-29T15:58:19.730Z] Functions deploy failed.
+[debug] [2022-08-29T15:58:19.731Z] {
+  "endpoint": {
+    "id": "addDataset",
+    "project": "chatbot-demo-e5d8a",
+    "region": "us-central1",
+    "entryPoint": "addDataset",
+    "platform": "gcfv1",
+    "runtime": "nodejs16",
+    "httpsTrigger": {},
+    "environmentVariables": {
+      "FIREBASE_CONFIG": "{\"projectId\":\"chatbot-demo-e5d8a\",\"storageBucket\":\"chatbot-demo-e5d8a.appspot.com\",\"locationId\":\"asia-northeast1\"}",
+      "GCLOUD_PROJECT": "chatbot-demo-e5d8a"
+    },
+    "codebase": "default",
+    "availableMemoryMb": 256,
+    "securityLevel": "SECURE_ALWAYS",
+    "labels": {
+      "deployment-tool": "cli-firebase"
+    }
+  },
+  "op": "update",
+  "original": {
+    "name": "FirebaseError",
+    "children": [],
+    "context": {
+      "function": "projects/chatbot-demo-e5d8a/locations/us-central1/functions/addDataset"
+    },
+    "exit": 1,
+    "message": "Failed to update function projects/chatbot-demo-e5d8a/locations/us-central1/functions/addDataset",
+    "original": {
+      "name": "FirebaseError",
+      "children": [],
+      "context": {
+        "body": {
+          "error": {
+            "code": 400,
+            "message": "An operation on function addDataset in region us-central1 in project chatbot-demo-e5d8a is already in progress. Please try again later.",
+            "status": "FAILED_PRECONDITION"
+          }
+        },
+        "response": {
+          "statusCode": 400
+        }
+      },
+      "exit": 1,
+      "message": "HTTP Error: 400, An operation on function addDataset in region us-central1 in project chatbot-demo-e5d8a is already in progress. Please try again later.",
+      "status": 400
+    },
+    "status": 500
+  }
+}
+[debug] [2022-08-29T15:58:20.007Z] Error: Failed to update function addDataset in region us-central1
+    at /Users/kawakitasho/.nodebrew/node/v18.8.0/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:42:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Fabricator.updateV1Function (/Users/kawakitasho/.nodebrew/node/v18.8.0/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:303:32)
+    at async Fabricator.updateEndpoint (/Users/kawakitasho/.nodebrew/node/v18.8.0/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:138:13)
+    at async handle (/Users/kawakitasho/.nodebrew/node/v18.8.0/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:79:17)
+[error] 
+[error] Error: There was an error deploying functions
